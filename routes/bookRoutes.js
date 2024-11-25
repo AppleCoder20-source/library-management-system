@@ -36,12 +36,12 @@ router.post('/books', async (req, res) => {
 router.patch('/books/:id', async (req,res) => {
     const findID = req.params.id
     const query = await Book.findByIdAndUpdate(findID,req.body)
-    res.send(query).status(200)
+    res.status(200).send(query)
  })
  router.delete('/books/:id', async (req,res) => {
     const findID = req.params.id
     const query = await Book.findByIdAndDelete(findID)
-    res.send(query).status(204)
+    res.status(204).send(query)
  })
 
 module.exports = router;
